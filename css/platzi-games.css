@@ -454,6 +454,8 @@ output {
 [hidden] {
   display: none !important;
 }
+/* Media Queries Mixin
+**********************/
 h1 {
   font-size: 30px;
   font-family: "Oswald", sans-serif;
@@ -597,6 +599,32 @@ main {
 }
 .estadistica--articulos span {
   margin-left: 10px;
+}
+
+.caja--con-fondo__stats {
+  margin: 0 auto;
+  position: absolute;
+  bottom: 10px;
+  border-top: none;
+  text-align: center;
+}
+.caja--con-fondo__stats ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.caja--con-fondo__stats li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 50px;
+  opacity: 0.8;
+}
+.caja--con-fondo__stats i {
+  color: #FFF;
+}
+.caja--con-fondo__stats span {
+  color: #FFF;
 }
 
 .ubicacion--perfil {
@@ -963,9 +991,7 @@ main {
 }
 
 .nav--header ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   padding-top: 35px;
 }
 .nav--header ul li {
@@ -978,11 +1004,16 @@ main {
   text-transform: uppercase;
   font-weight: 700;
 }
+@media only screen and (min-width: 992px) {
+  .nav--header ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
 
 .header__busqueda {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   margin-left: auto;
   padding-top: 35px;
 }
@@ -999,6 +1030,13 @@ main {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
+}
+@media only screen and (min-width: 992px) {
+  .header__busqueda {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .footer--principal {
@@ -1050,15 +1088,27 @@ main {
 }
 
 .contenedor--home {
-  height: 1200px;
-  width: 1300px;
-  margin: 0 auto;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media only screen and (min-width: 992px) {
+  .contenedor--home {
+    height: 1200px;
+    width: 1300px;
+    margin: 0 auto;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .caja--grande {
@@ -1080,12 +1130,12 @@ main {
 }
 
 .sidebar--listado {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-row-span: 2;
-  grid-row: 2/4;
-  -ms-grid-column: 4;
+  grid-row: 3/5;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 1;
-  grid-column: 4/5;
+  grid-column: 1/2;
 }
 
 .caja-zelda {
@@ -1131,4 +1181,78 @@ main {
   -ms-grid-column: 4;
   -ms-grid-column-span: 1;
   grid-column: 4/5;
+}
+
+.sidebar--listado {
+  max-width: 300px;
+  padding: 20px;
+  border-radius: 20px;
+  color: #333333;
+  -webkit-box-shadow: 0px 20px 33px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 20px 33px 0px rgba(0, 0, 0, 0.2);
+}
+.sidebar--listado h3 {
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.sidebar--listado ul {
+  margin: 0;
+  padding: 0;
+}
+.sidebar--listado li {
+  padding: 10px 0;
+  margin: 10px 0;
+  border-top: 1px solid #cccccc;
+  list-style: none;
+}
+.sidebar--listado a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 20px;
+  color: #333333;
+}
+.sidebar--listado__numero {
+  margin-right: 20px;
+  color: rgba(51, 51, 51, 0.5);
+}
+
+.banner--homepage {
+  width: 300px;
+  padding: 50px;
+  margin-bottom: 20px;
+  background-color: #8841DA;
+  color: #FFF;
+}
+.banner--homepage h3 {
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.banner--homepage .button {
+  padding: 10px;
+  height: 50px;
+  border: 2px solid #FFF;
+  font-size: 10px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.banner--homepage .button:hover {
+  background-color: #FFF;
+  color: #8841DA;
+  -webkit-transition: 350ms;
+  transition: 350ms;
+}
+.banner--homepage p {
+  margin-bottom: 30px;
 }
